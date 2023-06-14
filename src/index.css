@@ -1,0 +1,228 @@
+:root {
+  --transition: all linear 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: azure;
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* SCROLLBAR */
+/* =========== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0369a1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: azure;
+}
+
+@supports (scrollbar-color: red black) {
+  * {
+    scrollbar-color: #0369a1 azure;
+    scrollbar-width: thin;
+  }
+}
+
+/* MODAL */
+/* ======= */
+
+.modal {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 0 1em;
+  border-radius: 10px;
+  transform: translate(-50%, -200%);
+  transition: var(--transition);
+}
+
+.modal.active {
+  transform: translate(-50%, 0);
+}
+
+.tick-img {
+  max-width: 50px;
+  margin-top: -20px;
+}
+
+.modal-text {
+  margin: 0.8em;
+  color: #6b7280;
+  width: 100%;
+}
+
+.modal-text::first-letter {
+  text-transform: capitalize;
+}
+
+.container {
+  min-height: 400px;
+  padding: 0 1em;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: -0.05em;
+  margin: 0px;
+  margin-bottom: 0.8em;
+}
+
+.heading-black {
+  color: black;
+  display: block;
+  margin: 0;
+}
+
+.heading-blue {
+  color: #0369a1;
+  display: block;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.3rem;
+  font-family: "Inter", sans-serif;
+  color: #6b7280;
+  margin: 0;
+  margin-bottom: 4em;
+}
+
+.generate-pass {
+  border-radius: 5px;
+  background: #0369a1;
+  box-shadow: 0px 1px 2px #0369a1;
+  color: white;
+  border: none;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 1em 2em;
+  font-size: 1.01rem;
+  margin-bottom: 2em;
+}
+
+.generate-pass:hover {
+  cursor: pointer;
+}
+
+.generate-pass:active {
+  transform: translateY(2px);
+}
+
+.description-two {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  color: #6b7280;
+  margin: 0;
+  margin-bottom: 1.2em;
+  display: none;
+}
+
+.div-pass {
+  display: none;
+}
+
+.div-pass,
+.description-two {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100;
+  }
+}
+
+.div-pass.is-active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 0;
+  color: white;
+}
+
+.description-two.is-active {
+  display: block;
+}
+
+.pass-container {
+  background: #273549;
+  border-radius: 5px;
+  padding: 1em 2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+hr {
+  height: 2px;
+  background-color: #0369a1;
+  border: none;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+/* FOOTER */
+/* ====== */
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+  background-color: var(--darkBlue);
+  background-color: #273549;
+  color: white;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  justify-content: center;
+}
+
+.social-icons > a > i {
+  transition: all ease-in-out 0.2s;
+}
+
+.social-icons > a > i:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
